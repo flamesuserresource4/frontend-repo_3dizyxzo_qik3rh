@@ -1,15 +1,7 @@
 import SEOHead from './components/SEOHead';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import CTASection from './components/CTASection';
-import Pricing from './components/Pricing';
-import Schedule from './components/Schedule';
-import Testimonials from './components/Testimonials';
-import Calculators from './components/Calculators';
 import LeadForm from './components/LeadForm';
-import FAQ from './components/FAQ';
-import Location from './components/Location';
-import Footer from './components/Footer';
 
 export default function App() {
   const handleCTAClick = () => {
@@ -22,20 +14,19 @@ export default function App() {
       <SEOHead />
       <Navbar />
       <Hero onCTAClick={handleCTAClick} />
-      <div className="relative">
-        <div className="pointer-events-none absolute inset-0 opacity-60 [background:radial-gradient(600px_200px_at_50%_-50%,rgba(16,185,129,0.2),transparent),radial-gradient(400px_200px_at_80%_0%,rgba(34,211,238,0.15),transparent)]" />
+
+      {/* Simple content wrapper to ensure visible sections even if 3D is loading */}
+      <main className="relative mx-auto max-w-7xl px-6 py-16 text-white">
+        <div className="pointer-events-none absolute inset-0 opacity-60 [background:radial-gradient(600px_200px_at_50%_-50%,rgba(16,185,129,0.18),transparent),radial-gradient(400px_200px_at_80%_0%,rgba(34,211,238,0.12),transparent)]" />
         <div className="relative">
-          <CTASection />
-          <Pricing />
-          <Schedule />
-          <Testimonials />
-          <Calculators />
-          <LeadForm />
+          <section className="prose prose-invert max-w-none">
+            <h2 className="text-2xl font-bold">Why Never Settle?</h2>
+            <p className="text-slate-300">Family-first fitness in Bengaluru. Group classes, personal coaching, and kids/senior friendly programs in a welcoming community.</p>
+          </section>
         </div>
-        <FAQ />
-        <Location />
-      </div>
-      <Footer />
+      </main>
+
+      <LeadForm />
     </div>
   );
 }
