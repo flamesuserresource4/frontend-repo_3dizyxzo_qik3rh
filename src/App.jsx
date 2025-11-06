@@ -5,6 +5,8 @@ import Calculators from './components/Calculators';
 import Schedule from './components/Schedule';
 import CTASection from './components/CTASection';
 import LeadForm from './components/LeadForm';
+import Pricing from './components/Pricing';
+import Testimonials from './components/Testimonials';
 
 export default function App() {
   const formRef = useRef(null);
@@ -22,7 +24,9 @@ export default function App() {
         <div className="pointer-events-none absolute inset-0 opacity-60 [background:radial-gradient(600px_200px_at_50%_-50%,rgba(16,185,129,0.2),transparent),radial-gradient(400px_200px_at_80%_0%,rgba(34,211,238,0.15),transparent)]" />
         <div className="relative">
           <CTASection />
+          <Pricing />
           <Schedule />
+          <Testimonials />
           <Calculators />
           <LeadForm ref={formRef} />
         </div>
