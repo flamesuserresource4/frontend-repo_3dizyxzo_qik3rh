@@ -1,16 +1,17 @@
-import { useRef } from 'react';
 import SEOHead from './components/SEOHead';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import Calculators from './components/Calculators';
-import Schedule from './components/Schedule';
 import CTASection from './components/CTASection';
-import LeadForm from './components/LeadForm';
 import Pricing from './components/Pricing';
+import Schedule from './components/Schedule';
 import Testimonials from './components/Testimonials';
+import Calculators from './components/Calculators';
+import LeadForm from './components/LeadForm';
+import FAQ from './components/FAQ';
+import Location from './components/Location';
+import Footer from './components/Footer';
 
 export default function App() {
-  const formRef = useRef(null);
-
   const handleCTAClick = () => {
     const el = document.getElementById('lead-form');
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -19,6 +20,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-950">
       <SEOHead />
+      <Navbar />
       <Hero onCTAClick={handleCTAClick} />
       <div className="relative">
         <div className="pointer-events-none absolute inset-0 opacity-60 [background:radial-gradient(600px_200px_at_50%_-50%,rgba(16,185,129,0.2),transparent),radial-gradient(400px_200px_at_80%_0%,rgba(34,211,238,0.15),transparent)]" />
@@ -28,12 +30,12 @@ export default function App() {
           <Schedule />
           <Testimonials />
           <Calculators />
-          <LeadForm ref={formRef} />
+          <LeadForm />
         </div>
+        <FAQ />
+        <Location />
       </div>
-      <footer className="mx-auto max-w-7xl px-6 pb-16 pt-8 text-center text-xs text-slate-400">
-        © {new Date().getFullYear()} Never Settle – Family Fitness Studio, Bengaluru. All rights reserved.
-      </footer>
+      <Footer />
     </div>
   );
 }
